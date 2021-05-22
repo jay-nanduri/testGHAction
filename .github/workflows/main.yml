@@ -18,6 +18,6 @@ jobs:
           base_uri: https://prod1.ast-cloud.com
           cx_client_id: ${{ secrets.CX_CLIENT_ID }}
           cx_client_secret: ${{ secrets.CX_CLIENT_SECRET }}
-          additional_params: --sast-preset-name "Jay tEST"
+          additional_params: --sast-preset-name "Checkmarx Default"
           scan_types: sast
 
