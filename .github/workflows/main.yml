@@ -20,4 +20,3 @@ jobs:
           cx_client_secret: ${{ secrets.CX_CLIENT_SECRET }}
           cx_tenant: galactica
           additional_params: --sast-preset-name "Checkmarx Default"
-          scan_types: sast
