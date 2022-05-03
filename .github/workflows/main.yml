@@ -12,7 +12,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Checkmarx AST CLI Action
-        uses: checkmarx/ast-github-action@master #Github Action version
+        uses: checkmarx/ast-github-action@2.0.4 #Github Action version
         with:
           project_name: TestGitHubAction_wait_mode
           base_uri: https://ast.ppe.cxast.net/
