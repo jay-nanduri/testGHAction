@@ -10,9 +10,15 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+- script: |
+      wget https://sca-downloads.s3.amazonaws.com/cli/latest/ScaResolver-linux64.tar.gz
+      tar -xzvf ScaResolver-linux64.tar.gz
+      rm -rf ScaResolver-linux64.tar.gz 
+  displayName: 'Sca resolver'
+
 - task: checkmarx.checkmarx-ast-azure-plugin.cx-scan-task.Checkmarx AST@2
   displayName: 'Checkmarx AST'
   inputs:
     CheckmarxService: 'PPE environment'
     tenantName: 'research_tenant'
-    additionalParams: '--async'
+    additionalParams: '--sca-resolver' './ScaResolver'
