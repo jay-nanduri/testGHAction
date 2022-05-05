@@ -19,10 +19,10 @@ steps:
       tar -xzvf ScaResolver-linux64.tar.gz
 
       rm -rf ScaResolver-linux64.tar.gz 
-      
+
 - task: checkmarx.checkmarx-ast-azure-plugin.cx-scan-task.Checkmarx AST@2
   displayName: 'Checkmarx AST'
   inputs:
     CheckmarxService: 'PPE environment'
-    tenantName: 'research_tenant'
+    tenantName: ${{ secrets.CX_TENANT_NAME }}
     additionalParams:  --sca-resolver ./ScaResolver
