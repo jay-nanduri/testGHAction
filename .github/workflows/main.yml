@@ -9,7 +9,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Checkmarx AST CLI Action
-        uses: checkmarx/ast-github-action@AST-10425-fix-pr-branch-override #Github Action version
+        uses: checkmarx/ast-github-action@main #Github Action version
         with:
           project_name: TestGitHubAction_no_wait_mode
           base_uri: https://ast.ppe.cxast.net/
