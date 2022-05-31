@@ -11,8 +11,8 @@ jobs:
       - name: Checkmarx AST CLI Action
         uses: checkmarx/ast-github-action@main #Github Action version
         with:
-          project_name: TestGitHubAction_no_wait_mode
-          base_uri: https://ast.ppe.cxast.net/
+          project_name: testGHAction
+          base_uri: https://ast-master.dev.cxast.net/
           cx_client_id: ${{ secrets.CX_CLIENT_ID }}
           cx_client_secret: ${{ secrets.CX_CLIENT_SECRET }}
           cx_tenant: research_tenant
