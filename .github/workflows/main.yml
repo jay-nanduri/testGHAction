@@ -9,7 +9,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Checkmarx AST CLI Action
-        uses: checkmarx/ast-github-action@main #Github Action version
+        uses: checkmarx/ast-github-action@AST-12645-pr-decoration-from-gh-action #Github Action version
         with:
           project_name: testGHAction
           base_uri: https://ast-master-components.dev.cxast.net/
