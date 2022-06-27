@@ -16,4 +16,4 @@ jobs:
           cx_client_id: ${{ secrets.CX_CLIENT_ID }}
           cx_client_secret: ${{ secrets.CX_CLIENT_SECRET }}
           cx_tenant: master_tenant
-          namespace: "Checkmarx test"
+          namespace: "jay-nanduri"
