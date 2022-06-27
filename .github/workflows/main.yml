@@ -1,9 +1,6 @@
 name: Checkmarx AST Scan
-on:
-  push:
-    branches:
-      - main
-      - master
+on: [pull_request]
+    
 
 jobs:
   build:
@@ -12,10 +9,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Checkmarx AST CLI Action
-        uses: checkmarx/ast-github-action@AST-10425-fix-pr-branch-override #Github Action version
+        uses: checkmarx/ast-github-action@AST-12645-pr-decoration-from-gh-action #Github Action version
         with:
-          project_name: TestGitHubAction_no_wait_mode
-          base_uri: https://ast.ppe.cxast.net/
+          project_name: testGHAction
+          base_uri: https://ast-master-components.dev.cxast.net/
           cx_client_id: ${{ secrets.CX_CLIENT_ID }}
           cx_client_secret: ${{ secrets.CX_CLIENT_SECRET }}
-          cx_tenant: research_tenant
+          cx_tenant: master_tenant
