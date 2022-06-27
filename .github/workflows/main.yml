@@ -16,4 +16,4 @@ jobs:
           cx_client_id: ${{ secrets.CX_CLIENT_ID }}
           cx_client_secret: ${{ secrets.CX_CLIENT_SECRET }}
           cx_tenant: master_tenant
-          repo_name: "Random Reppo"
+          namespace: "Checkmarx test"
