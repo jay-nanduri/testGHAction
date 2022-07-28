@@ -28,7 +28,7 @@ jobs:
           cx_client_id: ${{ secrets.CX_CLIENT_ID }}
           cx_client_secret: ${{ secrets.CX_CLIENT_SECRET }}
           cx_tenant: master_tenant
-          additional_params: --report-format sarif --ouput-path .
+          additional_params: --report-format sarif --output-path .
       - name: Upload SARIF file
         uses: github/codeql-action/upload-sarif@v1
         with:
