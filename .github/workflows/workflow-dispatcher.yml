@@ -1,6 +1,6 @@
 name: Workflow dispatcher
 on:
-  workflow_dispatch: 
+  workflow_call: 
     inputs: 
       env:
         required: true
