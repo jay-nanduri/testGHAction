@@ -25,7 +25,7 @@ jobs:
       - name: Check valid environment
         id: check_env
         run: |
-          if [ ${{ env.isValidEnv }} = true]; then 
+          if [[ ${{ env.isValidEnv }} == true]]; then 
             echo 'Hello ${{ inputs.env }}!'
           else
             echo 'Invalid environment!'  
