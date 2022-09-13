@@ -2,18 +2,15 @@ name: Workflow dispatcher
 on:
   workflow_dispatch: 
     inputs: 
-      pipeline:
+      Backfill:
         required: true
-        type: choice
-        description: Pipeline execution type
-        options:
-        - Backfill
-        - Main
-      if: ${{ inputs.pipeline === 'Main' }}  
+        type: boolean
+      Main:
+        required: true
+        type: boolean  
       env:
         required: true
         type: string
-      if: ${{ inputs.pipeline === 'Backfill'}}
       tag:
         required: true
         type: string  
