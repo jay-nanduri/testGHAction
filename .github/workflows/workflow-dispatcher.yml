@@ -1,0 +1,14 @@
+name: Workflow dispatcher
+on:
+  workflow_dispatch: 
+    inputs: 
+      env:
+        required: true
+        type: string
+        
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy build to target
+        run: cat ${{ inputs.env }}
