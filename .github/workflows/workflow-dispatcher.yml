@@ -23,11 +23,11 @@ jobs:
       - name: Invalid environment
         if: ${{ !contains(fromJson('["dv01", "dv02","dv03","dv04","dv05"]'), inputs.env) }} 
         run: |
-        echo "Invalid environment"
-        exit 1
+          echo "Invalid environment"
+          exit 1
 
       - name: Validate deployment type
         if: ${{ !inputs.Backfill && !inputs.Main}}  
         run: |
-        echo "Select either Backfill or main"
-        exit 1
+          echo "Select either Backfill or main"
+          exit 1
