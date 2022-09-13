@@ -9,16 +9,22 @@ on:
         required: true
         type: boolean  
       env:
-        required: true
+        required: false
         type: string
       tag:
-        required: true
+        required: false
         type: string  
         
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy build to target
-        if: ${{ contains(fromJson('["dv01", "dv02","dv03","dv04","dv05"]'), inputs.env) }}
-        run: echo 'Hello ${{ inputs.env }}!'
+      - name: Check valid environment
+        id: check_env
+        env:
+          validEnv: ${{ contains(fromJson('["dv01", "dv02","dv03","dv04","dv05"]'), inputs.env) }}
+        run: |
+          if [[ ${{ jobs.check_env.env.validEnv }}; then 
+            echo 'Hello ${{ inputs.env }}!'
+          else
+            echo 'Invalid environment!'  
