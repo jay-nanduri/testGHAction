@@ -20,7 +20,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Invalid environment
+      - name: Invalid environment check
         if: ${{ !contains(fromJson('["dv01", "dv02","dv03","dv04","dv05"]'), inputs.env) }} 
         run: |
           echo "Invalid environment"
@@ -30,4 +30,10 @@ jobs:
         if: ${{ !inputs.Backfill && !inputs.Main}}  
         run: |
           echo "Select either Backfill or main"
+          exit 1
+
+      - name: Validate Backfill deployment
+        if: ${{ inputs.Backfill && !inputs.tag.lenght > 0}}
+        run: |
+          echo "For Backfill, please input tag value"
           exit 1
