@@ -3,7 +3,7 @@ on:
   workflow_dispatch: 
     inputs: 
       Backfill:
-        description: For creating tag(main) - unselect this
+        description: Backfill(unselect this tag for MAIN-create tag)
         required: true
         type: boolean
       env:
