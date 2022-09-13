@@ -24,7 +24,7 @@ jobs:
         env:
           validEnv: ${{ contains(fromJson('["dv01", "dv02","dv03","dv04","dv05"]'), inputs.env) }}
         run: |
-          if [[ ${{ jobs.check_env.env.validEnv }}; then 
+          if [[ ${{ jobs.deploy.check_env.env.validEnv }}; then 
             echo 'Hello ${{ inputs.env }}!'
           else
             echo 'Invalid environment!'  
