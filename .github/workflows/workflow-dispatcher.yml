@@ -23,9 +23,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check valid environment
-        if: ${{ env.isValidEnv }} 
+        if: env.isValidEnv
         run: echo 'Hello ${{ inputs.env}}'  
 
       - name: Invalid environment check
-        if: ${{ !env.isValidEnv }} 
+        if: !env.isValidEnv
         run: echo 'Invalid environment'  
