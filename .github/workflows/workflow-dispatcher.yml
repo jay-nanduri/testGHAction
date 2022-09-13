@@ -22,12 +22,10 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Check valid environment
-        id: check_env
-        run: |
-          validEnv= ${{ env.isValidEnv }} 
-          if [ "$validEnv" = true ] ; then 
-            echo 'Hello ${{ inputs.env }}!'
-          else
-            echo 'Invalid environment!'
-          fi    
+      - name: valid environment
+      if: ${{ env.isValidEnv }}
+      run: echo "Hello ${{ inputs.env }}"
+      - name: invalid environment
+      if: ${{! env.isValidEnv }}
+      run: echo "Invalid environment"
+        
