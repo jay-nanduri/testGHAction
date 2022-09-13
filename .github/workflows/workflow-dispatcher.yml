@@ -23,7 +23,7 @@ jobs:
       - name: Invalid environment check
         if: ${{ !contains(fromJson('["dv01", "dv02","dv03","dv04","dv05"]'), inputs.env) }} 
         run: |
-          echo "Invalid environment"
+          echo "Invalid environment ${{ inputs.env }}"
           exit 1
 
       - name: Validate deployment type
