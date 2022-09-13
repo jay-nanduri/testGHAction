@@ -13,5 +13,3 @@ jobs:
       - name: Deploy build to target
         if: contains(fromJson('["dv01,dv02,dv03,dv04,dv05"]'),${{ inputs.env }})
         run: echo 'Hello ${{ inputs.env }}!'
-        if: contains(!fromJson('["dv01,dv02,dv03,dv04,dv05"]'),${{ inputs.env }})
-        run: echo 'Hello ${{ inputs.env }}!'
