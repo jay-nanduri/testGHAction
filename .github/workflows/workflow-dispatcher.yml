@@ -14,18 +14,16 @@ on:
       tag:
         required: false
         type: string  
-
-env:
-  isValidEnv:  ${{ contains(fromJson('["dv01", "dv02","dv03","dv04","dv05"]'), inputs.env) }}       
+       
         
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Check valid environment
-        if: (env.isValidEnv)
-        run: echo 'Hello ${{ inputs.env}}'  
+        if: ${{ contains(fromJson('["dv01", "dv02","dv03","dv04","dv05"]'), inputs.env) }} 
+        run: echo "Hello ${{ inputs.env }}"
 
-      - name: Invalid environment check
-        if: !(env.isValidEnv)
-        run: echo 'Invalid environment'  
+      - name: Invalid environment
+        if: ${{ !contains(fromJson('["dv01", "dv02","dv03","dv04","dv05"]'), inputs.env) }} 
+        run: echo "Invalid environment"
