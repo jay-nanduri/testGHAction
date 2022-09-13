@@ -11,5 +11,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy build to target
-        if: ${{ contains(fromJson('["dv01", "dv02","dv03","dv04","dv05"]'), ${{ inputs.env }}) }}
+        if: ${{ contains('["dv01","dv02","dv03","dv04"]', '${{ inputs.env }}') }}
         run: echo 'Hello ${{ inputs.env }}!'
