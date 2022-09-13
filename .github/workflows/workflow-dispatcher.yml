@@ -25,7 +25,7 @@ jobs:
           exit 1
 
       - name: Validate Backfill deployment
-        if: ${{ inputs.Backfill && !inputs.tag.lenght > 0}}
+        if: ${{ inputs.Backfill && !inputs.tag.length > 0}}
         run: |
           echo "For Backfill, please input tag value"
           exit 1
