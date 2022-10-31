@@ -1,9 +1,8 @@
 name: Checkmarx AST Scan
 on:
-  push:
+  pull_request:
       branches:
         - main
-        - master
     
 
 jobs:
@@ -20,3 +19,4 @@ jobs:
           cx_client_id: ${{ secrets.CX_CLIENT_ID }}
           cx_client_secret: ${{ secrets.CX_CLIENT_SECRET }}
           cx_tenant: cx_ast_rd_galatica_canary
+          additional_params: --threshold sas-high=1
